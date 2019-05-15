@@ -59,7 +59,7 @@ public class SearchEmployeeActivity extends AppCompatActivity {
         listCall.enqueue(new Callback<Employee>() {
             @Override
             public void onResponse(Call<Employee> call, Response<Employee> response) {
-                Toast.makeText(SearchEmployeeActivity.this, "", Toast.LENGTH_SHORT).show();
+                Toast.makeText(SearchEmployeeActivity.this, response.body().toString(), Toast.LENGTH_SHORT).show();
                 String content = "";
                 content += " Id : " + response.body().getId() + "\n";
                 content += " Name : " + response.body().getEmployee_name() + "\n";
